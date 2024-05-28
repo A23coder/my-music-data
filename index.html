@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Data</title>
+</head>
+<body>
+    <h1>Music Data</h1>
+    <div id="music-info"></div>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const musicInfo = document.getElementById('music-info');
+                musicInfo.innerHTML = `
+                    <h2>${data.music_name}</h2>
+                    <p>Singer: ${data.singer_name}</p>
+                    <img src="${data.musicImage}" alt="${data.music_name}" width="300">
+                    <p><a href="${data.music_url}">Download Music</a></p>
+                `;
+            });
+    </script>
+</body>
+</html>
