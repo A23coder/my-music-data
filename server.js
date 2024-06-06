@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 app.get('/my-music-data', (req, res) => {
-    fs.readFile(path.join(__dirname, 'data.json'), 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, 'data1.json'), 'utf8', (err, data) => {
         if (err) {
             res.status(500).send('Error reading data');
             return;
